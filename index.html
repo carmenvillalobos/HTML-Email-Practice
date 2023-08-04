@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset = "utf-8">
+    <!-- Line 4 sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Line 6 is used for responsive web design and sets the viewport properties for the document -->
+    <title>Practice HTML Email</title>
+    <style>
+        /* Place CSS styles here */
+      h3 {
+        text-align: center;
+      }
+      #btns {
+        text-align: center;
+      }
+      .dark-mode {
+            background-color: black;
+            color: white;
+        }
+ 
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+      #bullet-proof-button{
+        margin-left: auto; 
+        margin-right: auto;
+      }
+    </style>
+</head>
+
+<body>
+  
+  <!-- Ghost table below
+    Member: the purpose of a ghost table is for responsive behavior on Outlook
+    We force Outlook to display columns side-by-side no matter what -->
+    <table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
+        <tr>
+          <td class="main_container">
+            <!--[if (gte mso 9)|(IE)]>
+            <table width="600" align="center">
+              <tr>
+                <td width="450">
+                <![endif]-->
+                  <table border="0" cellpadding="0" cellspacing="0" width="450" align="left" class="left_column">
+                    <tr>
+                      <td style="padding:0px;border: 1px solid black;">
+                        Left Column Content
+                      </td>
+                    </tr>
+                  </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                <td width="150">
+                <![endif]-->
+                  <table border="0" cellpadding="0" cellspacing="0" width="150" align="right" class="right_column">
+                    <tr>
+                      <td style="text-align:right;padding:0px;border: 1px solid black;">
+                        Right Column Content
+                      </td>
+                    </tr>
+                  </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+              </tr>
+            </table>
+            <![endif]-->
+          </td>
+        </tr>
+      </table>
+  
+  <!--     Bulletproof combined padded/border button -->
+    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;" id="bullet-proof-button">
+    <tr>
+      <td align="center" bgcolor="#19cca3" role="presentation" style="border:none;border-radius:6px;cursor:auto;padding:11px 20px;background:#19cca3;" valign="middle">
+          <a href="href="https://www.google.com" style="background:#19cca3;color:#ffffff;font-family:Helvetica, sans-serif;font-size:18px;font-weight:600;line-height:120%;Margin:0;text-decoration:none;text-transform:none;" target="_blank">
+          Click here!
+          </a>
+        </td>
+      </tr>
+    </table>
+  
+  <!--   Dark Mode/Light Mode Functionality -->
+
+      <h3 id="DarkModetext"> Dark Mode is OFF </h3>
+      <div id="btns">
+        <button onclick="darkMode()">Darkmode</button>
+        <button onclick="lightMode()">Lightmode</button>
+      </div>
+  
+  
+    <script>
+        // Place JavaScript code in here
+      function darkMode(){
+            let element = document.body
+            let content = document.getElementById("DarkModetext")
+            element.className = "dark-mode"
+            content.innerText = "Dark Mode is ON"
+        }
+
+        function lightMode() {
+            let element = document.body;
+            let content = document.getElementById("DarkModetext");
+            element.className = "light-mode";
+            content.innerText = "Dark Mode is OFF";
+        }
+    </script>
+                                                  
+</body>
+
+</html>
+
+<!-- Shopify Liquid Template 
+Note:
+{{ ... }} You use the double curly braces when you are working with data output
+e.g., {{ product.title }}
+
+{% ... %} You use curly braces with the percentage sign when you are working with logic
+e.g., {% if cart.total_price > 50 %}
+
+Example of using this:
+
+let product = {
+    title: "Red shirt",
+    price: 15,
+    image: "image"
+}
+
+<h1> {{ product.title }} </h1>
+
+<h2> {{ product.price }} </h2>
+
+<img src=" {{ product.image }} ">
+
+<button> Buy now! </button
+
+-->
